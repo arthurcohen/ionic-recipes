@@ -21,4 +21,16 @@
     </ion-list>
     <button ion-button type="submit" block [disabled]="!f.valid">Add</button>
   </form>
+  <ion-list >
+    <ion-item-sliding *ngFor="let ingredient of currIngredients">
+      <ion-item>
+        <h3>{{ ingredient.name }} ({{ ingredient.amount }})</h3>
+      </ion-item>
+      
+      <ion-item-options>
+        <ion-icon name="delete"></ion-icon>
+        <button ion-button color="danger" (tap)="onDeleteIngredient(ingredient)">Delete</button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>
